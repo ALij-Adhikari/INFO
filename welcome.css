@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333; /* Dark background for contrast */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+.welcome-container {
+    color: #fff; /* White text color */
+    max-width: 90vw; /* Prevents overflow */
+    padding: 20px;
+}
+
+.typing-effect {
+    display: block; /* Ensures text appears on a new line */
+    border-right: 3px solid #fff; /* Cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+    font-size: 1.2vw; /* Adjust this to fit text */
+    line-height: 1.5;
+    margin: 0; /* Remove default margin */
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* Typing effect animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Cursor blink animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+/* Button container */
+#buttons-container {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+    margin-top: 20px; /* Space between text and buttons */
+}
+
+/* Show buttons */
+#buttons-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button styles */
+.btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.btn:hover {
+    background-color: #f0f0f0;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
